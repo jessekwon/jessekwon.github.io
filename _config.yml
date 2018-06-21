@@ -76,7 +76,7 @@ analytics:
 # Site Author
 author:
   name             : "Jesse Kwon"
-  avatar           : "/assets/images/profile.png"
+  avatar           : "/assets/images/profile.jpg"
   bio              : "Back-End Developer"
   location         : "Korea"
   email            : "gwon.hs1@gmail.com"
