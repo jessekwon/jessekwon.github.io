@@ -1,42 +1,55 @@
-# Notification 체널의 생성과 관리
+---
+layout:single
+author_profile: true
+comments: true
+share: true
+related: true
+toc: true
+title: [Android8.0 번역]Notification 채널의 생성과 관리
+tag: 안드로이드, Notification_channel, 알림채널, API_level_26
+---
 
-Android 8.0(API level 26) 부터 모든 Notification 은 채널에 속해있어야한다. 각체널별로 체널의 모든 알림에 적용되는 시각적 청각적 동작을 설정할 수 있다. 그러면 사용자는 이설정을 바꿀수 있고 앱의 알림체널이 끼어들어야할지 보여주지 말아야할지를 결정할 수 있다. 
+
+
+# Notification 채널의 생성과 관리
+
+Android 8.0(API level 26) 부터 모든 Notification 은 채널에 속해있어야한다. 각채널별로 채널의 모든 알림에 적용되는 시각적 청각적 동작을 설정할 수 있다. 그러면 사용자는 이설정을 바꿀수 있고 앱의 알림채널이 끼어들어야할지 보여주지 말아야할지를 결정할 수 있다. 
 
 
 
-체널의 개요와 Android 8.0 의 새로운 알림모습을 아래 비디오에서 확인해보자
+채널의 개요와 Android 8.0 의 새로운 알림모습을 아래 비디오에서 확인해보자
 
 [Notifications in Android O](https://youtu.be/zGIw4MIJn5o)
 
 
 
-사용자는 그림1에서 보여지는것처럼 시스템세팅에서 각 앱별로 알림체널을 설정하는것이 가능하다.
+사용자는 그림1에서 보여지는것처럼 시스템세팅에서 각 앱별로 알림채널을 설정하는것이 가능하다.
 
 ![](../assets/images/channel-settings.jpg)
 
-**그림 1**. 시계앱의 알림과 체널설정
+**그림 1**. 시계앱의 알림과 채널설정
 
 
 
-> **Note** : 사용자 인터페이스는 알림체널을 "카테고리"로 보여진다
+> **Note** : 사용자 인터페이스는 알림채널을 "카테고리"로 보여진다
 
-알림체널을 생성한 후, 알림동작을 바꿀수 없고, 그 시점에는 사용자가 완전히 컨트롤한다. 체널의 이름과 설명은 변경할 수 있다.
+알림채널을 생성한 후, 알림동작을 바꿀수 없고, 그 시점에는 사용자가 완전히 컨트롤한다. 채널의 이름과 설명은 변경할 수 있다.
 
 
 
-보내는 알림의 타잎별로 체널을 생성해야한다. 또한 사용자의 선택을 반영하는 알림 체널을 만들수 있다.예로, 메시지 앱에서 사용자별 대화그룹으로 나눠진 알림체널을 만들수 있다.
+보내는 알림의 타잎별로 채널을 생성해야한다. 또한 사용자의 선택을 반영하는 알림 채널을 만들수 있다.예로, 메시지 앱에서 사용자별 대화그룹으로 나눠진 알림채널을 만들수 있다.
 
 
 
 Android 8.0(API level 26) 을 타겟으로 할때, 하나 혹은 여러개의 알림채널을 만들어야한다. 만약 앱이 Adnroid 8.0(API level 26) 혹은 그이상에서 돌아갈때 `targetSdkVersion`이 25 혹은 그이하로 설정되었다면  Android 7.1(API level 25)혹은 그이하에서 돌아가는것과 동일하게 동작한다.
 
-> **Caution** : 앱이 Android 8.0(API level 26)이상으로 설정되어 있고 체널을 정의하지않고 알림을 보내면 알림은 나타나지 않고 에러로 로그에 남는다.
+> **Caution** : 앱이 Android 8.0(API level 26)이상으로 설정되어 있고 채널을 정의하지않고 알림을 보내면 알림은 나타나지 않고 에러로 로그에 남는다.
 
-> **Note** : Android 8.0(API level 26)을 타겟으로 하는앱이 알림체널없이 알림을 보내려고 시도할때 토스트로 나타나는 경고를 화면에 노출하하도록 새로운 설정을 켤 수있다. 세팅은 **설정 > 개발자옵션** 에서 **알림체널 경고보기**를 켜면된다
+> **Note** : Android 8.0(API level 26)을 타겟으로 하는앱이 알림채널없이 알림을 보내려고 시도할때 토스트로 나타나는 경고를 화면에 노출하하도록 새로운 설정을 켤 수있다. 세팅은 **설정 > 개발자옵션** 에서 **알림채널 경고보기**를 켜면된다
 
 
 
-## 알림체널 생성하기
+## 알림채널 생성하기
 
 알림채널을 생성하기 위해 아래 단계를 따르시오
 
@@ -83,7 +96,7 @@ private void createNotificationChannel() {
 
 #### 중요도 설정하기
 
-채널중요도는 체널에 발송된 모든 알림에 끼어들기레벨에 영향을 미친다. 그리고 [NotificationChannel](https://developer.android.com/reference/android/app/NotificationChannel) 생성자에서 그것을 정의 해야한다. [IMPORTANCE_NONE(0)](https://developer.android.com/reference/android/app/NotificationManager#IMPORTANCE_NONE) 에서 [IMPORTANCE_HIGH(4)](https://developer.android.com/reference/android/app/NotificationManager#IMPORTANCE_HIGH) 까지의 5개의 중요도레벨중 하나를 사용할수 있다. 채널에 명시한 중요도는 채널로 전송되는 모든 메시지에 적용된다.
+채널중요도는 채널에 발송된 모든 알림에 끼어들기레벨에 영향을 미친다. 그리고 [NotificationChannel](https://developer.android.com/reference/android/app/NotificationChannel) 생성자에서 그것을 정의 해야한다. [IMPORTANCE_NONE(0)](https://developer.android.com/reference/android/app/NotificationManager#IMPORTANCE_NONE) 에서 [IMPORTANCE_HIGH(4)](https://developer.android.com/reference/android/app/NotificationManager#IMPORTANCE_HIGH) 까지의 5개의 중요도레벨중 하나를 사용할수 있다. 채널에 명시한 중요도는 채널로 전송되는 모든 메시지에 적용된다.
 
 
 
