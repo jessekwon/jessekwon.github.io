@@ -1,12 +1,12 @@
 ---
-layout:single
+layout: single
 author_profile: true
 comments: true
 share: true
 related: true
 toc: true
 title: [Android8.0 번역]Notification 채널의 생성과 관리
-tag: 안드로이드
+tag: 안드로이드, Notification_channel, 알림채널, API_level_26
 ---
 
 
