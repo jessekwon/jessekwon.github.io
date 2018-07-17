@@ -5,8 +5,8 @@ comments: true
 share: true
 related: true
 toc: true
-title: Elasticsearch 설정
-tag: Elasticsearch, 엘라스틱서치 설정
+title: Elasticsearch 설치및 기본 명령어
+tag: Elasticsearch, 엘라스틱서치 설치, 
 ---
 
 
@@ -77,6 +77,8 @@ tar -xvf elasticsearch-6.3.1.tar.gz
 
 
 
+### 기본명령어
+
 **검색**
 
 ~~~bash
@@ -133,7 +135,6 @@ curl -XPOST http://localhost:9200/인덱스명/타잎명/_mapping -d @mapping.js
 **@mapping.json**
 
 ~~~json
-put /tlog/story/_mapping
 {
 	"story" : {
 		"properties" : {
