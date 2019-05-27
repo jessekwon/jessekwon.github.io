@@ -193,7 +193,16 @@
     }
 
     &.site-title {
-      margin-left: 0;
+      margin-left: 15px;
+    }
+    &.top-profile{
+      margin: 0px;
+      padding: 0px;
+      img {
+        width: 100%;
+        max-width: 36px;
+        padding: 0px;
+      }
     }
   }
 
