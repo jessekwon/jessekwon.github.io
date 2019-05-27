@@ -5,7 +5,7 @@ comments: true
 share: true
 related: true
 toc: true
-title: 인증서 발급요청 및 SSL 적용
+title: SSL 적용하기
 tag: [인증서, SSL, CRT, PFX]
 ---
 
@@ -22,10 +22,12 @@ openssl 을 이용해서 key 와 CSR 파일을 동시에 생성
 openssl이 없는 경우 [다운로드](https://code.google.com/archive/p/openssl-for-windows/downloads) 
 
 ~~~
-openssl -nodes -newkey rsa:2048 -keyout test.key -out test.tnote.kr.csr -config openssl.cnf
+openssl -nodes -newkey rsa:2048 -keyout test.key -out test.domainname.kr.csr -config openssl.cnf
 ~~~
 
 -config 옵션을 사용하지 않고 실행하면 `Unable to load config info from c:openssl/ssl/openssl.cnf` 라는 오류 발생
+
+
 
 **실행화면**
 
@@ -58,6 +60,8 @@ An optional company name []:
 ```
 
 실행하면 서버정보 입력하도록 되어 있는데 각 정보는 아래와 같다.
+
+
 
 **입력내용**
 
@@ -92,6 +96,8 @@ AlphaSign, 1개 도메인 기준으로 설명함
 
 최종 인증서 요청 하면 완료
 
+
+
 ### 3. 인증서 발급 관련 정보
 
 * 인증서를 요청을 하면 확인요청 메일이 온다. 
@@ -103,11 +109,13 @@ AlphaSign, 1개 도메인 기준으로 설명함
 * 발급된 인증서는 3개의 .crt 파일로 구성되어 있다
 
   ( `www.tnote.kr.crt`, `GLOBALSIGN_ROOT_CA.crt`, `ALPHASSL_CA__SHA256__G2.crt` )
+  
+  
 
 ### 4. key와 CRT파일로 PFX 파일 만들기
 
 ```
-C:\03_Certification\www.tnote.kr\20190522>openssl pkcs12 -export -in www.tnote.kr.crt -inkey www.tnote.kr.key -out www.tnote.kr.pfx -name tnote
+openssl pkcs12 -export -in www.domainname.kr.crt -inkey www.domainname.kr.key -out www.domainname.kr.pfx -name tnote
 ```
 
 생성할 비밀번호를 입력하고, 비밀번호 확인을 하면 .pfx파일이 생성된다. 
@@ -115,6 +123,8 @@ C:\03_Certification\www.tnote.kr\20190522>openssl pkcs12 -export -in www.tnote.k
 생성된 비밀번호는 iis 적용시 이용된다. 
 
 ![pfx 만들기](https://img.tnote.kr/upload/dev/ssl02_pfx.png)
+
+
 
 ### 5. iis 7.x 적용
 
@@ -135,6 +145,8 @@ C:\03_Certification\www.tnote.kr\20190522>openssl pkcs12 -export -in www.tnote.k
 ​	https 선택후 편집 버튼 클릭
 
 ​	SSL 인증서에서 위에서 생성한 .pfx의 `-name tnote` 옵션으로 입력했던 인증서 찾아 선택
+
+
 
 ### 6. 인증서 확인
 
