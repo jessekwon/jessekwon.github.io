@@ -21,7 +21,7 @@ openssl 을 이용해서 key 와 CSR 파일을 동시에 생성
 
 openssl이 없는 경우 [다운로드](https://code.google.com/archive/p/openssl-for-windows/downloads) 
 
-~~~
+~~~bash
 openssl -nodes -newkey rsa:2048 -keyout test.key -out test.domainname.kr.csr -config openssl.cnf
 ~~~
 
@@ -31,7 +31,7 @@ openssl -nodes -newkey rsa:2048 -keyout test.key -out test.domainname.kr.csr -co
 
 **실행화면**
 
-```
+```bash
 Loading 'screen' into random state - done
 Generating a 2048 bit RSA private key
 ..................................................................+++
@@ -114,7 +114,7 @@ AlphaSign, 1개 도메인 기준으로 설명함
 
 ### 4. key와 CRT파일로 PFX 파일 만들기
 
-```
+```bash
 openssl pkcs12 -export -in www.domainname.kr.crt -inkey www.domainname.kr.key -out www.domainname.kr.pfx -name domainname
 ```
 
