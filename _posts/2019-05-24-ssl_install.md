@@ -72,8 +72,8 @@ An optional company name []:
 | Locality Name (eg, city) []:                                | 시/군/구 | Jongno-gu                                              |
 | Organization Name (eg, company) [Internet Widgits Pty Ltd]: | 회사명   | TOURNOTE                                               |
 | Organizational Unit Name (eg, section) []:                  | 팀명     | Tournote DevTeam                                       |
-| Common Name (eg, YOUR name) []:                             | 사이트   | www.tnote.kr                                           |
-| Email Address []:                                           | 이메일   | khs@doresoft.com                                       |
+| Common Name (eg, YOUR name) []:                             | 사이트   | www.domainname.kr                                 |
+| Email Address []:                                           | 이메일   | jessekwon@mail.com            |
 | A challenge password []:<br />An optional company name []:  | 추가정보 | 입력하면 정보불일치가 <br />될 수 있으므로 엔터만 입력 |
 
 생성된 CSR파일을 발급업체(gabia)에 제출
@@ -108,14 +108,14 @@ AlphaSign, 1개 도메인 기준으로 설명함
 
 * 발급된 인증서는 3개의 .crt 파일로 구성되어 있다
 
-  ( `www.tnote.kr.crt`, `GLOBALSIGN_ROOT_CA.crt`, `ALPHASSL_CA__SHA256__G2.crt` )
+  ( `www.domainname.kr.crt`, `GLOBALSIGN_ROOT_CA.crt`, `ALPHASSL_CA__SHA256__G2.crt` )
   
   
 
 ### 4. key와 CRT파일로 PFX 파일 만들기
 
 ```
-openssl pkcs12 -export -in www.domainname.kr.crt -inkey www.domainname.kr.key -out www.domainname.kr.pfx -name tnote
+openssl pkcs12 -export -in www.domainname.kr.crt -inkey www.domainname.kr.key -out www.domainname.kr.pfx -name domainname
 ```
 
 생성할 비밀번호를 입력하고, 비밀번호 확인을 하면 .pfx파일이 생성된다. 
@@ -144,7 +144,7 @@ openssl pkcs12 -export -in www.domainname.kr.crt -inkey www.domainname.kr.key -o
 
 ​	https 선택후 편집 버튼 클릭
 
-​	SSL 인증서에서 위에서 생성한 .pfx의 `-name tnote` 옵션으로 입력했던 인증서 찾아 선택
+​	SSL 인증서에서 위에서 생성한 .pfx의 `-name domainname` 옵션으로 입력했던 인증서 찾아 선택
 
 
 
