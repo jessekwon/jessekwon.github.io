@@ -1,12 +1,16 @@
 ---
-layout: single
-author_profile: true
-comments: true
-share: true
-related: true
-toc: true
+layout: post
 title: Android Studio 에뮬레이터에서 한글키보드 설정
-tag: 안드로이드 ,AVD ,에뮬레이터 ,한글
+subtitle: Android Studio 에뮬레이터에서 한글키보드 설정
+date: 2018-07-09
+author: "jesseKwon"
+header-img: "img/post-bg-digital-native.jpg"
+catalog: true
+tags: 
+    - 안드로이드 
+    - AVD 
+    - 에뮬레이터 
+    - 한글
 ---
 
 # Android Studio 에뮬레이터에서 한글키보드 설정

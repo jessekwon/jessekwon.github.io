@@ -1,12 +1,16 @@
 ---
-layout: single
-author_profile: true
-comments: true
-share: true
-related: true
-toc: true
-title: SSL 적용하기
-tag: [인증서, SSL, CRT, PFX]
+layout: post
+title:  "SSL 적용하기"
+subtitle: "openssl을 이용한 윈도우 PFX로 SSL적용하기"
+date:   2019-05-24
+author: "jesseKwon"
+header-img: "img/post-bg-web.jpg"
+catalog: true
+tags:
+    - 인증서
+    - SSL
+    - CRT
+    - PFX
 ---
 
 

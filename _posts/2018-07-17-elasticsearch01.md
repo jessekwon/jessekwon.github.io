@@ -1,12 +1,14 @@
 ---
-layout: single
-author_profile: true
-comments: true
-share: true
-related: true
-toc: true
+layout: post
 title: Elasticsearch 설치및 기본 명령어
-tag: Elasticsearch, 엘라스틱서치 설치, 
+subtitle: Elasticsearch 설치및 기본 명령어
+date: 2018-07-17
+author: "jesseKwon"
+header-img: "img/post-bg-js-module.jpg"
+catalog: true
+tags: 
+    - Elasticsearch 
+    - 엘라스틱서치_설치 
 ---
 
 

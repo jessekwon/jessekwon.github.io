@@ -1,12 +1,16 @@
 ---
-layout: single
-author_profile: true
-comments: true
-share: true
-related: true
-toc: true
+layout: post
 title: Android 8.0 번역 - Notification 채널의 생성과 관리
-tag: 안드로이드 ,Notification_channel ,알림채널 ,API_level_26
+subtitle: 
+date: 2018-07-09
+author: "jesseKwon"
+header-img: "img/post-bg-nextgen-web-pwa.jpg"
+catalog: true
+tags: 
+    - 안드로이드 
+    - Notification_channel 
+    - 알림채널 
+    - API_level_26
 ---
 
 

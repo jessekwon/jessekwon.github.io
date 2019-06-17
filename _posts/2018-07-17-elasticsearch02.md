@@ -1,13 +1,16 @@
 ---
-layout: single
-author_profile: true
-comments: true
-share: true
-related: true
-toc: true
-title: Elasticsearch 한글형태소 분석기 설정(feat.Arirang)
-tag: Elasticsearch,엘라스틱서치_한글,형태소분석,Arirang
-
+layout: post
+title: Elasticsearch 한글형태소 분석기 설정
+subtitle: Elasticsearch 한글형태소 분석기 설정(feat.Arirang)
+date: 2018-07-17
+author: "jesseKwon"
+header-img: "img/post-bg-js-module.jpg"
+catalog: true
+tags: 
+    - Elasticsearch 
+    - 엘라스틱서치_한글
+    - 형태소분석
+    - Arirang
 ---
 
 

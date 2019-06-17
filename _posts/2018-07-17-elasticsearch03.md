@@ -1,12 +1,17 @@
 ---
-layout: single
-author_profile: true
-comments: true
-share: true
-related: true
-toc: true
+layout: post
 title: Elasticsearch Plugin 설치
-tag: Elasticsearch, 엘라스틱서치_플러그인, 형태소분석, Arirang, Elasticsearch_plugin
+subtitle: Elasticsearch Plugin 설치
+date: 2018-07-17
+author: "jesseKwon"
+header-img: "img/post-bg-js-module.jpg"
+catalog: true
+tags: 
+    - Elasticsearch 
+    - Elasticsearch_plugin
+    - 엘라스틱서치_플러그인
+    - 형태소분석
+    - Arirang
 ---
 
 
