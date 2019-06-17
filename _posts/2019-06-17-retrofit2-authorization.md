@@ -370,7 +370,7 @@ public class Authorization {
 }
 ~~~
 
-이제 요청에 401/403에러가 발생했는지를 다루고 있다. 발생했을때 auth key(이메일과 패스워드의 인코딩된 결합)를 생성하고 요청헤더로 로그인API에 그것을 전달한다. 로그인 API가 호출됨으로서 성공하면 ` Authorization` 객체가 리턴된다. `Authorization` 은 세션에 저장되어야 하는 새로운 토큰을 포함한다. 그래서 토큰은 업데이트된다. 이제 인증안된 에러가 발생하는  `mainRequest` 를 재시도 할 수있다. 새로운 토큰을 `mainRequest` 에 추가하고 요청이 재전송되도록 해준다 이제 성공적으로 결과를 받아야한다. 
+이제 요청에 401/403에러가 발생했는지를 다루고 있다. 발생했을때 auth key(이메일과 패스워드의 인코딩된 결합)를 생성하고 요청헤더로 로그인API에 그것을 전달한다. 로그인 API가 호출됨으로서 성공하면 `Authorization` 객체가 리턴된다. `Authorization` 은 세션에 저장되어야 하는 새로운 토큰을 포함한다. 그래서 토큰은 업데이트된다. 이제 인증안된 에러가 발생하는  `mainRequest` 를 재시도 할 수있다. 새로운 토큰을 `mainRequest` 에 추가하고 요청이 재전송되도록 해준다 이제 성공적으로 결과를 받아야한다.
 
 **Process flow**: `getAccountInfo()` -> Unauthorized Error -> `loginAccount()` -> 성공(token updated) -> 재시도 `getAccountInfo()`  -> 성공
 
